@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game_src", "game_src\game_src.csproj", "{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTK", "opentk-develop\Source\OpenTK\OpenTK.csproj", "{A37A7E14-0000-0000-0000-000000000000}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		DebugMinimal|Any CPU = DebugMinimal|Any CPU
+		DebugMinimal|x64 = DebugMinimal|x64
+		Documentation|Any CPU = Documentation|Any CPU
+		Documentation|x64 = Documentation|x64
+		Nsis|Any CPU = Nsis|Any CPU
+		Nsis|x64 = Nsis|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		ReleaseMinimal|Any CPU = ReleaseMinimal|Any CPU
+		ReleaseMinimal|x64 = ReleaseMinimal|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Debug|x64.Build.0 = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.DebugMinimal|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.DebugMinimal|Any CPU.Build.0 = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.DebugMinimal|x64.ActiveCfg = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.DebugMinimal|x64.Build.0 = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Documentation|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Documentation|Any CPU.Build.0 = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Documentation|x64.ActiveCfg = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Documentation|x64.Build.0 = Debug|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Nsis|Any CPU.ActiveCfg = Release|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Nsis|Any CPU.Build.0 = Release|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Nsis|x64.ActiveCfg = Release|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Nsis|x64.Build.0 = Release|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Release|x64.ActiveCfg = Release|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.Release|x64.Build.0 = Release|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.ReleaseMinimal|Any CPU.ActiveCfg = Release|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.ReleaseMinimal|Any CPU.Build.0 = Release|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.ReleaseMinimal|x64.ActiveCfg = Release|Any CPU
+		{24E5C1BF-C3E9-4021-8A5A-A7A384A1B40C}.ReleaseMinimal|x64.Build.0 = Release|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.Debug|x64.ActiveCfg = Debug|x64
+		{A37A7E14-0000-0000-0000-000000000000}.Debug|x64.Build.0 = Debug|x64
+		{A37A7E14-0000-0000-0000-000000000000}.DebugMinimal|Any CPU.ActiveCfg = DebugMinimal|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.DebugMinimal|Any CPU.Build.0 = DebugMinimal|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.DebugMinimal|x64.ActiveCfg = DebugMinimal|x64
+		{A37A7E14-0000-0000-0000-000000000000}.DebugMinimal|x64.Build.0 = DebugMinimal|x64
+		{A37A7E14-0000-0000-0000-000000000000}.Documentation|Any CPU.ActiveCfg = Documentation|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.Documentation|Any CPU.Build.0 = Documentation|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.Documentation|x64.ActiveCfg = Documentation|x64
+		{A37A7E14-0000-0000-0000-000000000000}.Documentation|x64.Build.0 = Documentation|x64
+		{A37A7E14-0000-0000-0000-000000000000}.Nsis|Any CPU.ActiveCfg = Nsis|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.Nsis|Any CPU.Build.0 = Nsis|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.Nsis|x64.ActiveCfg = Nsis|x64
+		{A37A7E14-0000-0000-0000-000000000000}.Nsis|x64.Build.0 = Nsis|x64
+		{A37A7E14-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.Release|x64.ActiveCfg = Release|x64
+		{A37A7E14-0000-0000-0000-000000000000}.Release|x64.Build.0 = Release|x64
+		{A37A7E14-0000-0000-0000-000000000000}.ReleaseMinimal|Any CPU.ActiveCfg = ReleaseMinimal|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.ReleaseMinimal|Any CPU.Build.0 = ReleaseMinimal|Any CPU
+		{A37A7E14-0000-0000-0000-000000000000}.ReleaseMinimal|x64.ActiveCfg = ReleaseMinimal|x64
+		{A37A7E14-0000-0000-0000-000000000000}.ReleaseMinimal|x64.Build.0 = ReleaseMinimal|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
