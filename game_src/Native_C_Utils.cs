@@ -28,7 +28,10 @@ public static partial class game
         throw new Exception("Copy my va function for c# (Drive E -> Visual Studio -> MemoryClass)");
         return a;
     }
-
+    public static int strncmp(string a, string b, int c)
+    {
+        return (strcmp(a, b) == true ? 0 : 1);
+    }
     /// <summary>
     /// returns -1 if the char b where not found in string a.
     /// </summary>

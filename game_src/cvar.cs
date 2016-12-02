@@ -166,11 +166,11 @@ public static partial class game
     */
     static void Cvar_SetValue(string var_name, float value)
     {
-        string val; // size is 32 -> char val[32];
+        string val = null; // size is 32 -> char val[32];
         if (value == (int)value)
-            Com_sprintf(val, 32, "%i", (int)value); // use ref to val?
+            Com_sprintf(ref val, 32, "%i", (int)value); // use ref to val?
         else
-            Com_sprintf(val, 32, "%f", value); // use ref to val?
+            Com_sprintf(ref val, 32, "%f", value); // use ref to val?
         Cvar_Set(var_name, val);
     }
     
@@ -201,7 +201,6 @@ public static partial class game
                     Cvar_Set(var.name, var.resetString);
         }
     }
-
     /*
     ============
     Cvar_Command
@@ -248,9 +247,8 @@ public static partial class game
             Com_Printf("usage: toggle <variable>\n");
             return;
         }
-
-        v = Cvar_VariableValue(Cmd_Argv(1));
-        v = !v;
+        v = (int)Cvar_VariableValue(Cmd_Argv(1));
+        v = (v == 0 ? 1 : 0); // v = !v;
 
         Cvar_Set2(Cmd_Argv(1), va("%i", v), qboolean.qfalse);
     }

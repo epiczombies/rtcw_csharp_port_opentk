@@ -33,4 +33,47 @@ public static partial class game
     static cvar_t sv_pure;
     static cvar_t sv_floodProtect;
     static cvar_t sv_allowAnonymous;
+
+    /*
+    =================
+    SV_SendServerCommand
+
+    Sends a reliable command string to be interpreted by
+    the client game module: "cp", "print", "chat", etc
+    A NULL client will broadcast to all clients
+    =================
+    */
+    static void SV_SendServerCommand(client_t cl, string fmt, params object[] args)
+    {
+        client_t client;
+        int j;
+        string message = va(fmt, args);
+
+        if (cl != null)
+        {
+            SV_AddServerCommand(cl, message);
+            return;
+        }
+
+        // hack to echo broadcast prints to console
+        if (com_dedicated.integer && !strncmp(message, "print", 5))
+        {
+            Com_Printf("broadcast: %s\n", SV_ExpandNewlines(message));
+        }
+
+        // send the data to all relevent clients
+        for (j = 0, client = svs.clients; j < sv_maxclients.integer; j++, client++)
+        {
+            if (client->state < CS_PRIMED)
+                continue;
+
+            // Ridah, don't need to send messages to AI
+            if (client->gentity && client.gentity.r.svFlags & SVF_CASTAI)
+                continue;
+
+            // done.
+            SV_AddServerCommand(client, message);
+        }
+    }
+
 }

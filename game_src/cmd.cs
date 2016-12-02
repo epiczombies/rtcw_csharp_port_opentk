@@ -143,7 +143,7 @@ public static partial class game
         }
 
         // check cvars
-        if (Cvar_Command())
+        if (Cvar_Command() == qboolean.qtrue)
             return;
 
         // check client game commands
@@ -182,7 +182,7 @@ public static partial class game
         i = 0;
         foreach (cmd_function_t cmd in cmd_functions)
         {
-            if (match && !Com_Filter(match, cmd.name, qboolean.qfalse))
+            if (match != null && Com_Filter(match, cmd.name, (int)qboolean.qfalse) == qboolean.qfalse)
                 continue;
 
             Com_Printf("%s\n", cmd.name);

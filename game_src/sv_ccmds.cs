@@ -233,10 +233,8 @@ public static partial class game
 //#endif
         Cmd_AddCommand("loadgame", SV_LoadGame_f);
         Cmd_AddCommand("killserver", SV_KillServer_f);
-        if (com_dedicated->integer)
-        {
+        if (com_dedicated.integer)
             Cmd_AddCommand("say", SV_ConSay_f);
-        }
     }
     /*
     ==================

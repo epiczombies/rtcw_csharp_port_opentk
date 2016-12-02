@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CL_ConsolePrint.cs" />
+    <Compile Include="cl_ui.cs" />
     <Compile Include="cmd.cs" />
     <Compile Include="common.cs" />
     <Compile Include="cvar.cs" />

@@ -4,7 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
+public enum errorParm_t
+{
+    ERR_FATAL,                  // exit the entire game with a popup window
+    ERR_DROP,                   // print to console and disconnect from game
+    ERR_SERVERDISCONNECT,       // don't kill server
+    ERR_DISCONNECT,             // client disconnected from the server
+    ERR_NEED_CD,                // pop up the need-cd dialog
+    ERR_ENDGAME                 // not an error.  just clean up properly, exit to the menu, and start up the "endgame" menu  //----(SA)	added
+};
 public enum qboolean { qfalse = 0, qtrue = 1 };
 public static partial class game
 {
@@ -27,7 +35,48 @@ public static partial class game
     static int CVAR_CHEAT = 512; // can not be changed if cheats are disabled
     static int CVAR_NORESTART = 1024; // do not clear when a cvar_restart is issued
 
-    static int MAX_STRING_TOKENS = 256; // max tokens resulting from Cmd_TokenizeString
+
+
+
+
+
+    // angle indexes
+    static int PITCH = 0;    // up / down
+    static int YAW = 1;    // left / right
+    static int ROLL = 2;    // fall over
+
+    // RF, this is just here so different elements of the engine can be aware of this setting as it changes
+    static int MAX_SP_CLIENTS = 64;     // increasing this will increase memory usage significantly
+
+    // the game guarantees that no string from the network will ever
+    // exceed MAX_STRING_CHARS
+    static int MAX_STRING_CHARS = 1024;   // max length of a string passed to Cmd_TokenizeString
+    static int MAX_STRING_TOKENS = 256;   // max tokens resulting from Cmd_TokenizeString
+    static int MAX_TOKEN_CHARS = 1024;   // max length of an individual token
+
+    static int MAX_INFO_STRING = 1024;
+    static int MAX_INFO_KEY = 1024;
+    static int MAX_INFO_VALUE = 1024;
+
+    static int BIG_INFO_STRING = 8192;  // used for system info key only
+    static int BIG_INFO_KEY = 8192;
+    static int BIG_INFO_VALUE = 8192;
+
+    static int MAX_QPATH = 64;   // max length of a quake game pathname
+    static int MAX_OSPATH = 256;  // max length of a filesystem pathname
+
+    static int MAX_NAME_LENGTH = 32;  // max length of a client name
+
+    static int MAX_SAY_TEXT = 150;
+
+    
+
+
+
+
+
+
+
 
 
     static string S_COLOR_BLACK = "^0";
@@ -38,4 +87,31 @@ public static partial class game
     static string S_COLOR_CYAN = "^5";
     static string S_COLOR_MAGENTA = "^6";
     static string S_COLOR_WHITE = "^7";
+
+
+
+    static void Com_sprintf( ref string dest, int size, string fmt, params object[] args)
+    {
+	    int len;
+	    string bigbuffer; // 32000
+
+        bigbuffer = va(fmt, args);
+        len = bigbuffer.Length;
+
+        if (len >= 32000)
+            Com_Error(errorParm_t.ERR_FATAL, "Com_sprintf: overflowed bigbuffer");
+        if (len >= size)
+            Com_Printf("Com_sprintf: overflow of %i in %i\n", len, size);
+        Q_strncpyz(ref dest, bigbuffer, size );
+    }
+    static void Q_strncpyz(ref string dest, string src, int destsize )
+    {
+        if (src == null)
+            Com_Error(errorParm_t.ERR_FATAL, "Q_strncpyz: NULL src");
+        
+        if (destsize < 1)
+            Com_Error(errorParm_t.ERR_FATAL, "Q_strncpyz: destsize < 1");
+
+        dest = src;
+    }
 }
